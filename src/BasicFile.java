@@ -6,12 +6,8 @@ import java.io.*;
 
 public class BasicFile 
 {
-    
     //reserves a var of type FILE
     File f;
-    
-    
-    
     public BasicFile()
     {
         // object will point to root of directory
@@ -70,7 +66,6 @@ public class BasicFile
             return f.getParent();
         
         }
-        //
         long length()
         {
         
@@ -102,8 +97,6 @@ public class BasicFile
         {
             return (f.exists())?"The physical file exists":"The physical file does not exists";
         }
-        
-        
         /*
         void printWriter() throws IOException
         {
@@ -120,31 +113,23 @@ public class BasicFile
         //buffer method calculation starts
         void unbufferedTime() throws IOException
         {
-    
             FileInputStream fis = new FileInputStream(f);
             System.out.println(f.getName() + " - " + f.length() + " bytes");
-        
             long startTime = System.nanoTime();
-        
             while(fis.read() != -1)
-        
             long endTime = System.nanoTime();
             System.out.println("Time    elapse   when   unbuffered" + (endTime-startTime)/1000000.0+ "msec" );
         }
     
-        void bufferedTime()throws IOException{
-    
+        void bufferedTime()throws IOException
+        {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f),4096);
-        
             System.out.println(f.getName() + " - " + f.length() + "bytes");
             long startTime = System.nanoTime();
-        
             while(bis.read() != -1)
             ;
-        
             long endTime = System.nanoTime();
             System.out.println("Time elapse when buffered " + (endTime - startTime)/1000000.0 + "msec");
-    
     
     }
         //read a text file, line by line of character
@@ -172,11 +157,5 @@ public class BasicFile
                 }
             
             }
-        
-        
-        
         }
-        
-        
-    
-            }
+}
